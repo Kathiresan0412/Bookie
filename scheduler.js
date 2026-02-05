@@ -1,7 +1,7 @@
 // scheduler.js - Automated Reminder Scheduler
 const cron = require('node-cron');
 const { getBookingsForReminders, markAsReminded, initializeTimeSlots } = require('./sheets');
-const { sendAppointmentReminder } = require('./Whatsapp');
+const { sendAppointmentReminder } = require('./whatsapp');
 
 // Check for bookings needing reminders every 5 minutes
 function startReminderScheduler() {

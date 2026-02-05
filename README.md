@@ -20,10 +20,11 @@ A fully automated salon booking system using WhatsApp Business API, perfect for 
 
 ## 🏗️ Technology Stack
 
-- **Backend**: Node.js + Express
+- **Framework**: Next.js 14 (React)
+- **Backend**: Next.js API Routes
 - **Database**: Google Sheets (Free)
 - **Messaging**: WhatsApp Business API (Meta Cloud API)
-- **Hosting**: Render.com (Free tier)
+- **Hosting**: Render.com / Vercel (Free tier)
 - **Automation**: Node-cron for scheduling
 
 ## 📋 Prerequisites
@@ -189,14 +190,14 @@ This will create time slots for the next 7 days.
 ### Step 7: Test Locally
 
 ```bash
-npm start
+npm run dev
 ```
 
 The server should start on `http://localhost:3000`
 
 Test the health endpoint:
 ```bash
-curl http://localhost:3000/health
+curl http://localhost:3000/api/health
 ```
 
 ### Step 8: Deploy to Render.com
@@ -208,7 +209,7 @@ curl http://localhost:3000/health
 5. Configure:
    - **Name**: salon-booking-bot
    - **Environment**: Node
-   - **Build Command**: `npm install`
+   - **Build Command**: `npm install && npm run build`
    - **Start Command**: `npm start`
    - **Plan**: Free
 
@@ -222,7 +223,7 @@ curl http://localhost:3000/health
 
 9. Copy your webhook URL:
    ```
-   https://your-app-name.onrender.com/webhook
+   https://your-app-name.onrender.com/api/webhook
    ```
 
 ### Step 9: Configure WhatsApp Webhook
@@ -231,7 +232,7 @@ curl http://localhost:3000/health
 2. Go to WhatsApp → Configuration
 3. Click "Edit" next to Webhook
 4. Enter:
-   - **Callback URL**: `https://your-app-name.onrender.com/webhook`
+   - **Callback URL**: `https://your-app-name.onrender.com/api/webhook`
    - **Verify Token**: Same as `VERIFY_TOKEN` in your `.env`
 5. Click "Verify and Save"
 
@@ -322,7 +323,7 @@ Kids Haircut      | 20       | $15
 
 ### Check Server Health
 ```bash
-curl https://your-app.onrender.com/health
+curl https://your-app.onrender.com/api/health
 ```
 
 ### View Logs (Render)
@@ -347,7 +348,7 @@ curl https://your-app.onrender.com/health
 
 2. **Verify Webhook:**
    ```bash
-   curl https://your-app.onrender.com/webhook
+   curl https://your-app.onrender.com/api/webhook
    # Should return 403 (normal behavior)
    ```
 

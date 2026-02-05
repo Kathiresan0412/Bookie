@@ -44,6 +44,12 @@ dist/
 build/
 *.tsbuildinfo
 
+# Next.js
+.next/
+out/
+.next
+out
+
 # Google Service Account Key (if stored locally)
 # Keep service account JSON keys out of repo
 *-service-account*.json
